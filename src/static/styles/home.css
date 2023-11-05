@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background-color: black;
+}
+
+header {
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background-color: black;
+}
+
+button {
+    padding: 10px 20px; 
+    font-size: 18px; 
+    background-color: #1ED760; 
+    color: white; 
+    border: none; 
+    border-radius: 5px;
+}

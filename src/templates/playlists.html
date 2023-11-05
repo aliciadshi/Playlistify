@@ -1,0 +1,38 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/playlists.css') }}">
+
+<html>
+    <head>
+        <title>Playlistify</title>
+        <script>
+            window.addEventListener("load", () => {
+                document.querySelector(".loader").classList.add("loader--hidden")
+
+                document.querySelector(".loader").addEventListener("trasitioned"), () => {
+                    document.body.removeChild(document.querySelector(".loader"))
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <div class="loader"></div>
+        <div class="container">
+            <h1>Playlists</h1>
+            <div id="items-container">
+                <ul>
+                    {% for item in items %}
+                        <div class="item">
+                            <li>
+                                <a href="{{ item.link }}">
+                                    <button>
+                                        <!-- <img src="{{ item.image }}"> -->
+                                        {{ item.name }}
+                                    </button>
+                                </a>
+                            </li>
+                        </div>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
