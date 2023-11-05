@@ -89,14 +89,12 @@ def get_playlists():
 
     # response = requests.get(api_base_url + 'me/playlists', headers=headers)
 
-    user = requests.get(api_base_url + '/me', headers=headers).json()["id"]
+    user = requests.get(api_base_url + 'me', headers=headers)
+    user_json = user.json()
+    user_id = user_json["id"]
 
-    response = requests.get(api_base_url + '/users/' + user + '/playlists', headers=headers)
-    
-    try:
-        playlists = response.json()
-    except json.decoder.JSONDecoderError:
-        print("decoder error")
+    response = requests.get(api_base_url + 'users/' + user_id + '/playlists', headers=headers)
+    playlists = response.json()
 
     result = ""
 
