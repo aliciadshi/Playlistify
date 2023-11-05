@@ -62,7 +62,11 @@ def callback():
         }
 
         response = requests.post(token_url, data=req_body)
-        token_info = response.json()
+        
+        try:
+            token_info = response.json()
+        except json.decoder.JSONDecoderError:
+            print("decoder error")
 
         session['access_token'] = token_info['access_token']
         session['refresh_token'] = token_info['refresh_token']
@@ -83,8 +87,16 @@ def get_playlists():
         'Authorization' : f"Bearer {session['access_token']}"
     }
 
-    response = requests.get(api_base_url + 'me/playlists', headers=headers)
-    playlists = response.json()
+    # response = requests.get(api_base_url + 'me/playlists', headers=headers)
+
+    user = requests.get(api_base_url + '/me', headers=headers).json()["id"]
+
+    response = requests.get(api_base_url + '/users/' + user + '/playlists', headers=headers)
+    
+    try:
+        playlists = response.json()
+    except json.decoder.JSONDecoderError:
+        print("decoder error")
 
     result = ""
 
