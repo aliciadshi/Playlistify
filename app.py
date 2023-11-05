@@ -18,7 +18,7 @@ client_id = os.getenv("SPOT_CLIENT_ID")
 client_secret = os.getenv("SPOT_CLIENT_SECRET")
 base_uri = "https://walrus-app-uywka.ondigitalocean.app"
 base_uri2 = "http://127.0.0.1:4444"
-redirect_uri = base_uri2 + "/callback"
+redirect_uri = base_uri + "/callback"
 
 AUTH_URL = "https://accounts.spotify.com/authorize"
 token_url = "https://accounts.spotify.com/api/token"
