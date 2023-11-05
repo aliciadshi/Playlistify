@@ -1,1 +1,1 @@
-worker: gunicorn main:app 
+worker: gunicorn app:app
