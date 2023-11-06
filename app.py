@@ -28,8 +28,6 @@ api_base_url = "https://api.spotify.com/v1/"
 def index():
 
     result = render_template('index.html')
-    print(client_id)
-    print(client_secret)
 
     return result
 
