@@ -28,6 +28,8 @@ api_base_url = "https://api.spotify.com/v1/"
 def index():
 
     result = render_template('index.html')
+    print(client_id)
+    print(client_secret)
 
     return result
 
@@ -90,6 +92,9 @@ def get_playlists():
     # response = requests.get(api_base_url + 'me/playlists', headers=headers)
 
     user = requests.get(api_base_url + 'me', headers=headers)
+
+    print(user)
+
     user_json = user.json()
     user_id = user_json["id"]
 
