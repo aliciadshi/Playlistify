@@ -103,9 +103,7 @@ def get_playlists():
     if datetime.now().timestamp () > session['expires_at']:
         return redirect('/refresh-token')
     
-    headers = {
-        'Authorization' : f"Bearer {get_token()}"
-    }
+    headers = get_auth_header(get_token())
 
     # response = requests.get(api_base_url + 'me/playlists', headers=headers)
 
@@ -144,9 +142,7 @@ def get_songs(playlist_id):
     if datetime.now().timestamp () > session['expires_at']:
         return redirect('/refresh-token')
     
-    headers = {
-        'Authorization' : f"Bearer {get_token()}"
-    }
+    headers = get_auth_header(get_token())
 
     response = requests.get(api_base_url + 'playlists/' + playlist_id+ "/tracks", headers=headers)
 
