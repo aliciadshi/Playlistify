@@ -114,6 +114,7 @@ def get_playlists():
     print(user)
 
     user_json = user.json()
+    print(user_json)
     user_id = user_json["id"]
 
     response = requests.get(api_base_url + 'users/' + user_id + '/playlists', headers=headers)
