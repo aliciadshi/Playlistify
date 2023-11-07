@@ -72,6 +72,8 @@ def callback():
         session['refresh_token'] = token_info['refresh_token']
         session['expires_at'] = datetime.now().timestamp() + token_info['expires_in']
 
+        print("access_token:" + session['access_token'])
+
         return redirect('/playlists')
     
 
@@ -97,6 +99,10 @@ def get_playlists():
     user_id = user_json["id"]
 
     response = requests.get(api_base_url + 'users/' + user_id + '/playlists', headers=headers)
+    
+    print("access_token:" + session['access_token'])
+    print(response)
+    
     playlists = response.json()
 
     result = ""
