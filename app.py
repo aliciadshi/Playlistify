@@ -181,7 +181,9 @@ def refresh_token():
     
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, port=4444)
+    # app.run(host='0.0.0.0', debug=True, port=4444)
+    privateIP = os.getenv("PRIVATE_IPV4")
+    app.run(host=privateIP, debug=True)
 
 # def search_for_artist(token, artist_name):
 #     url = "https://api.spotify.com/v1/search"
