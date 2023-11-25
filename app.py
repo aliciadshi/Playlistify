@@ -16,7 +16,7 @@ app.secret_key = os.getenv("APP_SECRET_KEY")
 
 client_id = os.getenv("SPOT_CLIENT_ID")
 client_secret = os.getenv("SPOT_CLIENT_SECRET")
-base_uri = "https://walrus-app-uywka.ondigitalocean.app"
+base_uri = "https://playlistify.me/"
 base_uri2 = "http://127.0.0.1:4444"
 redirect_uri = base_uri + "/callback"
 
