@@ -18,7 +18,7 @@ client_id = os.getenv("SPOT_CLIENT_ID")
 client_secret = os.getenv("SPOT_CLIENT_SECRET")
 base_uri = "https://playlistify.me"
 base_uri2 = "http://127.0.0.1:4444"
-redirect_uri = base_uri + "/callback"
+redirect_uri = base_uri2 + "/callback"
 
 AUTH_URL = "https://accounts.spotify.com/authorize"
 token_url = "https://accounts.spotify.com/api/token"
@@ -114,7 +114,7 @@ def get_playlists():
         playlist_id = playlists['items'][i]['id']
         playlist_name = playlists["items"][i]["name"]
         playlist_pfp = playlists["items"][i]["images"][0]["url"]
-        playlist_link = base_uri + '/songs/' + playlist_id
+        playlist_link = base_uri2 + '/songs/' + playlist_id
 
         items.append({'name':playlist_name, 'link':playlist_link, 'image':playlist_pfp})
 

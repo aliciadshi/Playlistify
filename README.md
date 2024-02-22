@@ -1,5 +1,9 @@
 # Playlistify
 
+## Chrome Extension
+Chrome Extension version of this project can be found at this link:
+http://github.com/aliciadshi/PlaylistifyExtensionV1
+
 ## Description
 Playlistify is an app that uses OpenAi's GPT 3.5 Turbo to create AI generated names for Spotify playlists. The app allows you to connect a Spotify account and access the user's Spotify playlists. 
 
